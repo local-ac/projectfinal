@@ -23,14 +23,14 @@ ________________________________________________________________________________
 API ที่สำคัญ
 ________________________________________________________________________________________________________________________________________
 Authentication and Authorization
-  1.  Login User
+   Login User
 
       -  post('/api/login')
 
       -  ใช้สำหรับผู้ใช้เข้าสู่ระบบ
       
   
-  3.  Login Admin
+   Login Admin
 
       -  post('/api/adminLogin')
 
@@ -40,35 +40,35 @@ ________________________________________________________________________________
 
 User Management
   
-  3.  Register User
+  Register User
 
       -  post('/api/signup')
 
       -  ใช้สำหรับลงทะเบียนผู้ใช้ใหม่
   
   
-  5.  Get User 
+  Get User 
 
       -  get('/api/users')
 
       -  ใช้สำหรับดึงข้อมูลโปรไฟล์ของผู้ใช้ (สำหรับผู้ดูแลระบบเพื่อใช้ในการตรวจสอบ ,แก้ไข และลบ)
   
   
-  7.  Delete User  
+  Delete User  
 
       -  delete('/api/users/:id')
 
       -  ใช้สำหรับลบผู้ใช้งาน (สำหรับผู้ดูแลระบบเท่านั้น)
 
   
-  9.  Update User Data
+  Update User Data
 
       -  put('/api/users/:id')
 
       -  ใช้สำหรับอัปเดทข้อมูลของผู้ใช้งาน
 
   
-  11.  Detail Pokemon
+  Detail Pokemon
     
       -  get('/api/pokemon')
     
