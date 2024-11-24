@@ -112,13 +112,14 @@ PokeAPI เป็น OpenAPIสำหรับข้อมูลเกี่ย�
       GET https://pokeapi.co/api/v2/pokemon/bulbasaur
       GET https://pokeapi.co/api/v2/pokemon/lvysaur
 
-Directory ของโครงสร้างAPI
+### Directory ของโครงสร้างAPI
+---
 
 ![image](https://github.com/user-attachments/assets/d13d346e-2be3-43a3-a349-bdd7f290301a)
 
-
-Directory ของโครงสร้าง Frontend
-
+---
+### Directory ของโครงสร้าง Frontend
+---
 
 ![image](https://github.com/user-attachments/assets/b51a1309-8804-452a-be5d-bb83c2cd9ecf)
 
