@@ -124,6 +124,19 @@ PokeAPI เป็น OpenAPIสำหรับข้อมูลเกี่ย�
 ![image](https://github.com/user-attachments/assets/b51a1309-8804-452a-be5d-bb83c2cd9ecf)
 
 ________________________________________________________________________________________________________________________________________
+## Database
+   users
+      -   id
+      -   username
+      -   password
+      -   email
+
+   admin
+      -   admin_id
+      -   username
+      -   password
+---
+
 ## User Interface
 
    -    Home
