@@ -156,10 +156,17 @@ ________________________________________________________________________________
  ![image](https://github.com/user-attachments/assets/aa2e8b2d-5af0-40d8-a29b-e6a1fed5bfaf)
 
 
-  - Home
+  - Home (Progress Bar)
   
 
 ![image](https://github.com/user-attachments/assets/daf658b4-d775-4a26-9b03-f7bf9273e866)
+
+
+   - Home (Radial Chart)
+
+
+![image](https://github.com/user-attachments/assets/6a9e6d2c-61dd-4572-b3b2-7e69d71b13f3)
+
 
   
 
