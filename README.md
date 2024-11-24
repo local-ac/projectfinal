@@ -127,16 +127,21 @@ ________________________________________________________________________________
 ## Database
    users
    
-      -   id
-      -   username
-      -   password
-      -   email
+      -   id   SERIAL PRIMARY KEY,
+      -   username   VARCHAR(255) UNIQUE NOT NULL,
+      -   password   VARCHAR(255) NOT NULL,
+      -   email      VARCHAR(255) NOT NULL,
 
    admin
    
-      -   admin_id
-      -   username
-      -   password
+      -   admin_id   SERIAL PRIMARY KEY,
+      -   username   VARCHAR(255) UNIQUE NOT NULL,
+      -   password   VARCHAR(255) NOT NULL,
+      -   email      VARCHAR(255) NOT NULL,
+
+
+   ส่วน Pokemon จะใช้ API จากภายนอก
+   
 ---
 
 ## User Interface
