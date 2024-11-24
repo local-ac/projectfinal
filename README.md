@@ -108,7 +108,9 @@ PokeAPI เป็น OpenAPIสำหรับข้อมูลเกี่ย�
 
 ตัวอย่าง
 
-      -      GET https://pokeapi.co/api/v2/pokemon/pikachu
+      GET https://pokeapi.co/api/v2/pokemon/pikachu
+      GET https://pokeapi.co/api/v2/pokemon/bulbasaur
+      GET https://pokeapi.co/api/v2/pokemon/lvysaur
 
 Directory ของโครงสร้างAPI
 
