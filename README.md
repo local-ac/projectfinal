@@ -161,24 +161,28 @@ ________________________________________________________________________________
 
   - Admin Dashboard
   
-  
+    หน้า Admin Dashboard ใช้สำหรับบริหารจัดการผู้ใช้งาน management โดยที่ Admin สามารถแก้ไขข้อมูล ,ลบของผู้ใช้งาน
+    
  ![image](https://github.com/user-attachments/assets/aa2e8b2d-5af0-40d8-a29b-e6a1fed5bfaf)
 
 
   - Home (Progress Bar)
   
-
+   หน้า Home จะแสดงรายละเอียดโปรเกมอนที่ต้องการในรูปแบบ Progress Bar
+   
 ![image](https://github.com/user-attachments/assets/daf658b4-d775-4a26-9b03-f7bf9273e866)
 
 
    - Home (Radial Chart)
 
+   หน้า Home จะแสดงรายละเอียดโปรเกมอนที่ต้องการในรูปแบบ Radial Chart
 
 ![image](https://github.com/user-attachments/assets/6a9e6d2c-61dd-4572-b3b2-7e69d71b13f3)
 
 
    - About
-     
+
+   แสดงข้อมูลเกี่ยวกับชื่อวิชา รหัสนักศึกษา และอาจารย์ที่ปรึกษา
 
    ![image](https://github.com/user-attachments/assets/59c0e973-c688-455d-952f-0fd866854f7e)
 
@@ -186,6 +190,7 @@ ________________________________________________________________________________
 
   - Article
 
+   แสดงข้อมลเกี่ยวกับ Article
   
 
   ![image](https://github.com/user-attachments/assets/e1627732-bf88-4edc-abef-cbdc20d64c03)
@@ -193,7 +198,7 @@ ________________________________________________________________________________
 
   - Top_Pokemon
 
-  
+   แสดงข้อมูล TOP จำนวน 12รายการของโปเกมอน
 
   ![image](https://github.com/user-attachments/assets/9f0d1acd-2337-4460-a9b9-f17a6b2593c6)
 
