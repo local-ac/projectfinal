@@ -260,7 +260,8 @@ ________________________________________________________________________________
 
     - ตรวจสอบให้ตรงกับฐานข้อมูลที่ติดตั้ง
 
-  ![01](https://github.com/user-attachments/assets/a3d775d5-da2d-40e1-8704-a0cd90fbe7f5)
+  ![image](https://github.com/user-attachments/assets/5644f530-8377-4233-ada3-73753b6cd45f)
+
 
 
 2. รัน Docker Compose
