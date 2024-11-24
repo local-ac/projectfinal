@@ -1,0 +1,324 @@
+/* HomePokemon.css */
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #E0F7FA, #FFFFFF);
+}
+
+.home-container {
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.title {
+  font-size: 2.5rem;
+  text-align: center;
+  color: #3b4cca;
+  margin-bottom: 20px;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: #ffffff00;
+  border-radius: 20px;
+  padding: 5px 15px;
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0);
+}
+
+.search-input {
+  padding: 10px 15px; /* ขยาย Padding ด้านข้าง */
+  font-size: 1.1rem;
+  width: 100%; /* ใช้เต็มความกว้างของ Container */
+  max-width: 280px; /* กำหนดความกว้างสูงสุด */
+  border: 2px solid #ddd; /* เส้นขอบบางๆ */
+  border-radius: 25px; /* ทำให้มุมมน */
+  outline: none;
+  background: #ffffff; /* พื้นหลังสีอ่อน */
+  color: #333; /* สีตัวอักษร */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
+  transition: border-color 0.3s, box-shadow 0.3s; /* เพิ่ม Transition */
+}
+
+/* สไตล์เมื่อโฟกัส */
+.search-input:focus {
+  border-color: #007bff; /* เปลี่ยนสีขอบเมื่อโฟกัส */
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2); /* เพิ่มเงาเมื่อโฟกัส */
+}
+
+.search-button {
+  background-color: #ffcb05;
+  color: #3b4cca;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #f7b300;
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+}
+
+.pokemon-card-horizontal {
+  display: flex;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  max-width: 800px;
+  margin: auto;
+  border-left: 8px solid #ffcb05;
+}
+
+.pokemon-image-section {
+  flex: 1;
+  background: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pokemon-image {
+  width: 160px;
+  height: auto;
+}
+
+.pokemon-info-section {
+  flex: 2;
+  padding: 20px;
+  background: linear-gradient(120deg, #e1e9f0, #f3f4f6);
+  color: black;
+}
+
+.pokemon-name {
+  font-size: 2rem;
+  color: #3b4cca;
+  margin-bottom: 15px;
+}
+
+.pokemon-info-details p {
+  margin: 5px 0;
+}
+
+.pokemon-stats {
+  margin-top: 15px;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 5px 0;
+}
+
+progress {
+  width: 100%;
+  height: 8px;
+  border-radius: 5px;
+}
+
+progress::-webkit-progress-bar {
+  background-color: #e0e0e0;
+}
+
+progress::-webkit-progress-value {
+  background: linear-gradient(90deg, #3b4cca, #ffcb05);
+  border-radius: 5px;
+}
+
+/* ปรับสไตล์ Dropdown */
+#pokemon-suggestions {
+  background-color: white; /* พื้นหลังสีขาว */
+  border: 1px solid #ddd; /* เส้นขอบบาง */
+  border-radius: 5px; /* มุมมน */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
+  max-height: 150px; /* จำกัดความสูง */
+  overflow-y: auto; /* เพิ่ม Scroll หากรายการเกิน */
+  font-size: 1rem; /* ขนาดตัวอักษร */
+  color: #333; /* สีตัวอักษร */
+}
+
+#pokemon-suggestions option {
+  padding: 10px; /* เพิ่ม Padding ในแต่ละรายการ */
+  cursor: pointer; /* เปลี่ยนเคอร์เซอร์เมื่อชี้ */
+  transition: background-color 0.2s; /* เพิ่ม Transition */
+}
+
+#pokemon-suggestions option:hover {
+  background-color: #f0f8ff; /* เปลี่ยนพื้นหลังเมื่อชี้ */
+}
+
+.custom-dropdown {
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  padding: 0;
+  margin: 5px 0 0;
+  max-height: 200px;
+  overflow-y: auto;
+  width: 100%;
+  z-index: 1000; /* เพื่อให้อยู่เหนือองค์ประกอบอื่น */
+}
+
+.dropdown-item {
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.dropdown-item:hover {
+  background-color: #f0f8ff;
+}
+
+.search-bar {
+  position: relative; /* เพื่อให้ Dropdown อยู่ภายใน Container */
+}
+
+.chart-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.chart-toggle button {
+  background-color: #ffcb05;
+  color: #3b4cca;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.chart-toggle button:hover {
+  background-color: #f7b300;
+}
+
+canvas#radial-chart {
+  display: block;
+  margin: 30px auto;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ตั้งค่ารูปแบบสำหรับ Radar Chart */
+canvas#radial-chart {
+  display: block;
+  margin: 20px auto; /* จัดให้อยู่กึ่งกลาง */
+  border: 2px solid #3b4cca; /* เส้นขอบสีน้ำเงิน */
+  border-radius: 50%; /* มุมมนแบบวงกลม */
+  background: radial-gradient(circle, #ffffff, #e0f7fa); /* พื้นหลังแบบไล่สี */
+  box-shadow: 0 8px 15px rgba(59, 76, 202, 0.3), 
+              inset 0 4px 8px rgba(255, 255, 255, 0.4); /* เพิ่มมิติ */
+  max-width: 250px; /* จำกัดขนาดความกว้าง */
+}
+
+/* ตั้งค่ารูปแบบสำหรับ Radar Chart */
+canvas#radial-chart {
+  display: block;
+  margin: 20px auto; /* จัดให้อยู่กึ่งกลาง */
+  border: 3px solid #3b4cca; /* เส้นขอบสีน้ำเงิน */
+  border-radius: 50%; /* มุมมนแบบวงกลม */
+  background: radial-gradient(circle, #ffffff, #e0f7fa); /* พื้นหลังแบบไล่สี */
+  box-shadow: 0 8px 15px rgba(59, 76, 202, 0.3), 
+              inset 0 4px 8px rgba(255, 255, 255, 0.4); /* เพิ่มมิติ */
+  max-width: 300px; /* ขนาดความกว้าง */
+  height: auto;
+}
+
+/* วางตำแหน่งชื่อพลังรอบกราฟ */
+.chart-labels {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 15px;
+}
+
+.chart-labels span {
+  display: inline-block;
+  background-color: #ffcb05;
+  padding: 6px 15px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  color: #3b4cca;
+  font-weight: bold;
+  text-transform: capitalize;
+  box-shadow: 0 4px 10px rgba(255, 203, 5, 0.3); /* เพิ่มเงาให้ป้าย */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* เอฟเฟกต์เมื่อ hover */
+.chart-labels span:hover {
+  background-color: #f7b300;
+  transform: scale(1.1); /* ขยายเมื่อ hover */
+}
+
+/* เพิ่มคำอธิบายค่าในแต่ละด้านของ Radar */
+.chart-labels span .stat-value {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #3b4cca;
+  display: block;
+  margin-top: 5px;
+}
+
+/* ปรับตำแหน่งของ Stats รอบกราฟ */
+.stat-labels {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10; /* ให้ข้อมูลอยู่ข้างหน้า */
+}
+
+/* สไตล์ของข้อความแต่ละพลังรอบกราฟ */
+.stat-labels .stat-item {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #3b4cca;
+  position: absolute;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  text-transform: capitalize;
+}
+
+.stat-labels .stat-item .value {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffcb05;
+}
+
+canvas {
+  display: block;
+  margin: 20px auto; /* จัดให้อยู่ตรงกลาง */
+  background: #fff; /* เพิ่มพื้นหลังขาว */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* เพิ่มเงา */
+  border-radius: 10px; /* มุมโค้ง */
+  padding: 10px;
+  max-width: 100%;
+}

@@ -1,0 +1,38 @@
+/* src/PaperPokemon.css */
+
+
+.paper-pokemon-containerz {
+    text-align: center;
+    padding: 50px 20px; /* เพิ่ม padding ให้เหมาะสม */
+    background: linear-gradient(135deg, #E0F7FA, #FFFFFF);
+    height: calc(100vh - 80px); /* ลดความสูงจาก navbar */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* จัดให้คอนเทนต์อยู่กลางหน้าจอ */
+  }
+  
+  .paper-titlez {
+    font-size: 3rem;
+    color: #a40f0f;
+    margin-bottom: 20px;
+  }
+  
+  .paper-contentz {
+    font-size: 1.2rem;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8; /* เพิ่ม line-height เพื่อความสบายตา */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .paper-titlez {
+      font-size: 2.5rem; /* ปรับขนาดตัวอักษร */
+    }
+    
+    .paper-contentz {
+      font-size: 1rem; /* ปรับขนาดตัวอักษร */
+    }
+  }
+  

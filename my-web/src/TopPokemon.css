@@ -1,0 +1,64 @@
+/* src/TopPokemon.css */
+
+.top-pokemon-container {
+    text-align: center;
+    padding: 50px 20px; /* เพิ่ม padding ให้เหมาะสม */
+    background: linear-gradient(135deg, #E0F7FA, #FFFFFF);
+    height: calc(100vh - 80px); /* ลดความสูงจาก navbar */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* จัดให้คอนเทนต์อยู่กลางหน้าจอ */
+  }
+  
+  .title {
+    font-size: 2.5rem;
+    color: #3b4cca;
+    margin-bottom: 20px;
+  }
+  
+  .pokemon-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px; /* ปรับให้มีช่องว่างระหว่างการ์ด */
+  }
+  
+  .pokemon-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    text-align: center;
+    width: 150px; /* ความกว้างของการ์ด */
+    transition: transform 0.2s ease;
+    border-left: 8px solid #ffcb05;
+  }
+  
+  .pokemon-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .pokemon-image {
+    width: 100px;
+    height: auto; /* ปรับให้ภาพมีสัดส่วนที่เหมาะสม */
+    margin-bottom: 10px;
+  }
+  
+  .pokemon-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    text-transform: capitalize;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .title {
+      font-size: 2rem; /* ปรับขนาดตัวอักษร */
+    }
+    
+    .pokemon-card {
+      width: 120px; /* ปรับขนาดการ์ด */
+    }
+  }
+  
