@@ -27,6 +27,16 @@ ________________________________________________________________________________
 
    - ดึงและแสดงข้อมูลโปเกมอน โดยการใช้ useEffect ใน React ในการเรียก API
 
+
+   
+   ReactDOM  DOM (Document Object Model)
+
+   - ReactDOM คือ ชุดของ API ที่ใช้สำหรับการทำงานร่วมกับ DOM (Document Object Model) ในเว็บเบราว์เซอร์ โดยเฉพาะใน React ซึ่งเป็น JavaScript library สำหรับการสร้าง user interfaces (UI) การใช้ ReactDOM จะช่วยให้สามารถแสดงผลของ React components ไปยัง DOM ของเว็บเพจ
+
+     ReactDOM.render(): ฟังก์ชันนี้ถูกใช้สำหรับเรนเดอร์ (render) หรือแสดงผลของ React component ไปยัง DOM ที่กำหนด ตัวอย่างเช่น:
+     
+            ReactDOM.render(<App />, document.getElementById('root'));
+
 ---
 
 ![image](https://github.com/user-attachments/assets/37be20bf-07b6-4751-83da-95934d73e1e7)
