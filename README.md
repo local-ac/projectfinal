@@ -173,6 +173,20 @@ ________________________________________________________________________________
       -  post('/api/login')
 
       -  ใช้สำหรับผู้ใช้เข้าสู่ระบบ
+
+      app.post('/api/login', async (req, res) => {
+        const { username, password } = req.body;
+        try {
+             const authResult = await authenticateUser(username, password);
+               if (authResult.authenticated) {
+         res.json({ success: true, user: authResult.user });
+       } else {
+         res.status(401).json({ success: false, message: 'Invalid credentials' });
+       }
+     } catch (error) {
+       res.status(500).json({ error: 'Error authenticating user' });
+     }
+    });
       
 
   
