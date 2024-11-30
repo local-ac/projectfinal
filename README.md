@@ -153,7 +153,16 @@ ________________________________________________________________________________
     
      - การใช้งาน: สามารถนำข้อมูลจาก API นี้ไปใช้ในโปรเจกต์ต่างๆ เช่น เกม, เว็บแอป, แอปพลิเคชันมือถือ หรือโปรเจกต์อื่นๆ ที่ต้องการข้อมูลเกี่ยวกับ Pokémon
 
-       
+   - การใช้ Pokémon API ใน JavaScript:
+
+            fetch('https://pokeapi.co/api/v2/pokemon/1/')
+              .then(response => response.json())
+              .then(data => {
+                   console.log(data);
+                   // แสดงข้อมูลของ Bulbasaur
+              })
+              .catch(error => console.log('Error:', error));
+
 
 
 ### Authentication and Authorization
