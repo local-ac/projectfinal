@@ -119,6 +119,37 @@ ________________________________________________________________________________
       GET https://pokeapi.co/api/v2/pokemon/lvysaur
 
 
+   - การใช้ Pokémon API:
+
+      - การเรียก API: เมื่อเรียก API จาก URL เช่น https://pokeapi.co/api/v2/pokemon/1/, คุณจะได้รับข้อมูลในรูปแบบ JSON เกี่ยวกับ Pokémon ตัวนั้น ตัวอย่างของข้อมูลที่ได้รับ:
+
+            {
+              "id": 1,
+              "name": "bulbasaur",
+  "height": 7,
+  "weight": 69,
+  "types": [
+    {
+      "type": {
+        "name": "grass"
+      }
+    },
+    {
+      "type": {
+        "name": "poison"
+      }
+    }
+  ],
+  "abilities": [
+    {
+      "ability": {
+        "name": "overgrow"
+      }
+    }
+  ]
+}
+
+        
 
 
 ### Authentication and Authorization
