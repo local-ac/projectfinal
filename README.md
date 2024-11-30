@@ -33,7 +33,7 @@ ________________________________________________________________________________
 
    - ReactDOM คือ ชุดของ API ที่ใช้สำหรับการทำงานร่วมกับ DOM (Document Object Model) ในเว็บเบราว์เซอร์ โดยเฉพาะใน React ซึ่งเป็น JavaScript library สำหรับการสร้าง user interfaces (UI) การใช้ ReactDOM จะช่วยให้สามารถแสดงผลของ React components ไปยัง DOM ของเว็บเพจ
 
-     ReactDOM.render(): ฟังก์ชันนี้ถูกใช้สำหรับเรนเดอร์ (render) หรือแสดงผลของ React component ไปยัง DOM ที่กำหนด ตัวอย่างเช่น:
+     _ReactDOM.render()_: ฟังก์ชันนี้ถูกใช้สำหรับเรนเดอร์ (render) หรือแสดงผลของ React component ไปยัง DOM ที่กำหนด ตัวอย่างเช่น:
      
             ReactDOM.render(<App />, document.getElementById('root'));
 
