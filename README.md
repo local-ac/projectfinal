@@ -59,8 +59,8 @@ ________________________________________________________________________________
         - Routing: Express ช่วยให้สามารถจัดการกับเส้นทาง (routes) ของ HTTP requests เช่น GET, POST, PUT, DELETE ได้อย่างง่ายดาย
           
                 app.get('/', (req, res) => {
-    res.send('Hello, World!');
-      });
+              res.send('Hello, World!');
+              });
 
 
 ---
