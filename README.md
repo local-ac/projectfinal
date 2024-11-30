@@ -165,7 +165,7 @@ ________________________________________________________________________________
 
 
 
-### Authentication and Authorization
+###  Local Postgresql via Docker Authentication and Authorization
 
 
    Login User
@@ -184,7 +184,7 @@ ________________________________________________________________________________
 
 ________________________________________________________________________________________________________________________________________
 
-### User Management
+### Local Postgresql via Docker User Management
 
   
   Register User
