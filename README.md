@@ -38,7 +38,7 @@ ________________________________________________________________________________
 
               ReactDOM.render(<App />, document.getElementById('root'));
 
-         App คือ React component ที่ต้องการแสดงผล และ document.getElementById('root') คือ element ที่จะเป็น container สำหรับ component ที่เรนเดอร์
+        - App คือ React component ที่ต้องการแสดงผล และ document.getElementById('root') คือ element ที่จะเป็น container สำหรับ component ที่เรนเดอร์
 
         - ReactDOM.hydrate(): ใช้สำหรับการเรนเดอร์ React components ในเว็บเพจที่มีการ render หน้าไว้แล้วจากฝั่งเซิร์ฟเวอร์ (Server-Side Rendering หรือ SSR) เพื่อให้ React เข้ามาจัดการกับ UI แบบ client-side
 
@@ -46,7 +46,7 @@ ________________________________________________________________________________
 
 
               const root = ReactDOM.createRoot(document.getElementById('root'));
-         root.render(<App />);
+              root.render(<App />);
 
 ---
 
