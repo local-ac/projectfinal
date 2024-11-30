@@ -33,17 +33,19 @@ ________________________________________________________________________________
 
    - ReactDOM คือ ชุดของ API ที่ใช้สำหรับการทำงานร่วมกับ DOM (Document Object Model) ในเว็บเบราว์เซอร์ โดยเฉพาะใน React ซึ่งเป็น JavaScript library สำหรับการสร้าง user interfaces (UI) การใช้ ReactDOM จะช่วยให้สามารถแสดงผลของ React components ไปยัง DOM ของเว็บเพจ
 
-        ReactDOM.render(): ฟังก์ชันนี้ถูกใช้สำหรับเรนเดอร์ (render) หรือแสดงผลของ React component ไปยัง DOM ที่กำหนด ตัวอย่างเช่น:
+        - ReactDOM.render(): ฟังก์ชันนี้ถูกใช้สำหรับเรนเดอร์ (render) หรือแสดงผลของ React component ไปยัง DOM ที่กำหนด ตัวอย่างเช่น:
      
-            ReactDOM.render(<App />, document.getElementById('root'));
 
-        App คือ React component ที่ต้องการแสดงผล และ document.getElementById('root') คือ element ที่จะเป็น container สำหรับ component ที่เรนเดอร์
+              ReactDOM.render(<App />, document.getElementById('root'));
 
-        ReactDOM.hydrate(): ใช้สำหรับการเรนเดอร์ React components ในเว็บเพจที่มีการ render หน้าไว้แล้วจากฝั่งเซิร์ฟเวอร์ (Server-Side Rendering หรือ SSR) เพื่อให้ React เข้ามาจัดการกับ UI แบบ client-side
+         App คือ React component ที่ต้องการแสดงผล และ document.getElementById('root') คือ element ที่จะเป็น container สำหรับ component ที่เรนเดอร์
 
-        ReactDOM.createRoot(): ฟังก์ชันนี้ใช้เพื่อสร้าง "root" สำหรับการทำงานในโหมด concurrent (การทำงานหลายอย่างพร้อมกัน) ซึ่งทำให้การ render เป็นไปอย่างมีประสิทธิภาพ:
+        - ReactDOM.hydrate(): ใช้สำหรับการเรนเดอร์ React components ในเว็บเพจที่มีการ render หน้าไว้แล้วจากฝั่งเซิร์ฟเวอร์ (Server-Side Rendering หรือ SSR) เพื่อให้ React เข้ามาจัดการกับ UI แบบ client-side
 
-          const root = ReactDOM.createRoot(document.getElementById('root'));
+        - ReactDOM.createRoot(): ฟังก์ชันนี้ใช้เพื่อสร้าง "root" สำหรับการทำงานในโหมด concurrent (การทำงานหลายอย่างพร้อมกัน) ซึ่งทำให้การ render เป็นไปอย่างมีประสิทธิภาพ:
+
+
+              const root = ReactDOM.createRoot(document.getElementById('root'));
          root.render(<App />);
 
 ---
