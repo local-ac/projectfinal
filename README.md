@@ -50,6 +50,19 @@ ________________________________________________________________________________
               const root = ReactDOM.createRoot(document.getElementById('root'));
               root.render(<App />);
 
+
+
+   Express
+
+   - web application framework สำหรับ Node.js ที่ใช้ในการสร้างแอปพลิเคชันบนเว็บ โดยมีจุดมุ่งหมายในการทำให้การพัฒนาเว็บแอปพลิเคชันและ API ง่ายขึ้น ด้วยการให้เครื่องมือและฟังก์ชันที่ช่วยในการจัดการ routing, middleware, และการจัดการคำขอ (requests) และการตอบกลับ (responses) ในเว็บแอปพลิเคชัน
+     
+        - Routing: Express ช่วยให้สามารถจัดการกับเส้นทาง (routes) ของ HTTP requests เช่น GET, POST, PUT, DELETE ได้อย่างง่ายดาย
+          
+                app.get('/', (req, res) => {
+    res.send('Hello, World!');
+      });
+
+
 ---
 
 
