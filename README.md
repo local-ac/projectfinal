@@ -59,8 +59,25 @@ ________________________________________________________________________________
         - Routing: Express ช่วยให้สามารถจัดการกับเส้นทาง (routes) ของ HTTP requests เช่น GET, POST, PUT, DELETE ได้อย่างง่ายดาย
           
                 app.get('/', (req, res) => {
-              res.send('Hello, World!');
-              });
+                    res.send('Hello, World!');
+                 });
+          
+     - Middleware: Express ใช้ middleware ในการประมวลผลคำขอก่อนหรือหลังที่คำขอจะถึง route handler ช่วยให้สามารถทำงานต่างๆ เช่น การตรวจสอบสิทธิ์, การแปลงข้อมูล, หรือการจัดการ error 
+          
+                app.use((req, res, next) => {
+                   console.log('Request received!');
+                   next(); // ให้ request ไปยัง middleware หรือ route ถัดไป
+                });
+       
+       - Handling HTTP Requests and Responses: Express ทำให้การรับและตอบคำขอในรูปแบบต่างๆ เช่น JSON, HTML, หรือไฟล์ต่างๆ 
+          
+                app.get('/json', (req, res) => {
+                   res.json({ message: 'Hello, World!' });
+                });
+         
+      - Static Files: Express สามารถให้บริการไฟล์ static เช่น รูปภาพ, CSS, หรือ JavaScript 
+
+              app.use(express.static('public'));
 
 
 ---
