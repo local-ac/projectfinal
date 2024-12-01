@@ -80,12 +80,20 @@ Express
 
             docker run --name postgres-container -e POSTGRES_USER=myuser -e POSTGRES_PASSWORD=mypassword -e POSTGRES_DB=mydb -p 5432:5432 -d postgres
 
-       --name postgres-container: กำหนดชื่อให้กับคอนเทนเนอร์
-      -e POSTGRES_USER=myuser: ตั้งค่าผู้ใช้ฐานข้อมูล
-      -e POSTGRES_PASSWORD=mypassword: ตั้งค่ารหัสผ่านสำหรับผู้ใช้
-      -e POSTGRES_DB=mydb: สร้างฐานข้อมูลเริ่มต้น
-      -p 5432:5432: เปิดพอร์ต 5432 เพื่อให้เข้าถึงฐานข้อมูลจากภายนอก
-      -d: รันคอนเทนเนอร์ในโหมดเบื้องหลัง
+
+   --name postgres-container: กำหนดชื่อให้กับคอนเทนเนอร์
+       
+   -e POSTGRES_USER=myuser: ตั้งค่าผู้ใช้ฐานข้อมูล
+      
+   -e POSTGRES_PASSWORD=mypassword: ตั้งค่ารหัสผ่านสำหรับผู้ใช้
+   
+   -e POSTGRES_DB=mydb: สร้างฐานข้อมูลเริ่มต้น
+      
+   -p 5432:5432: เปิดพอร์ต 5432 เพื่อให้เข้าถึงฐานข้อมูลจากภายนอก
+      
+   -d: รันคอนเทนเนอร์ในโหมดเบื้องหลัง
+
+   
 
    -   เชื่อมต่อไปยังฐานข้อมูล PostgreSQL ผ่านเครื่องมือเช่น psql หรือแอปพลิเคชันที่รองรับ PostgreSQL เช่น pgAdmin หรือ DBeaver.
 
