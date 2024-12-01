@@ -96,10 +96,39 @@ Express
 
    Real-Time Data Updates:
 
-   - ดึงและแสดงข้อมูลโปเกมอน โดยการใช้ useEffect ใน React ในการเรียก API
+   -    ดึงและแสดงข้อมูลโปเกมอน โดยการใช้ useEffect ใน React ในการเรียก API
+   -   useEffect
+     
+         React ที่ใช้สำหรับการทำงานบางอย่างหลังจากที่คอมโพเนนต์ render หรืออัปเดตข้อมูลแล้ว เช่น การดึงข้อมูลจาก API, การสมัคร event listener, การทำความสะอาด (cleanup) ฯลฯ
 
+       
+      import { useEffect, useState } from 'react';
 
-   
+      const Example = () => {
+        const [count, setCount] = useState(0);
+
+        // ใช้ useEffect เพื่อทำบางอย่างหลังจาก render
+        useEffect(() => {
+          console.log('Component rendered or count changed:', count);
+
+          // ฟังก์ชันทำความสะอาด (cleanup) ถ้ามี
+          return () => {
+            console.log('Cleanup when count changes or component unmounts');
+          };
+        }, [count]); // effect จะทำงานเมื่อ count เปลี่ยน
+
+        return (
+          <div>
+         <p>Count: {count}</p>
+         <button onClick={() => setCount(count + 1)}>Increase</button>
+          </div>
+        );
+      };
+
+   -   การทำงานของ useEffect:
+       ถ้าไม่ได้ระบุ dependency array ([]), effect จะทำงานหลังจากทุกการ render.
+       ถ้าระบุ dependency array (เช่น [count]), effect จะทำงานเมื่อค่าใน array เปลี่ยนแปลง.
+       สามารถใช้ฟังก์ชัน clean-up เพื่อทำความสะอาด เช่น การยกเลิก event listener เมื่อคอมโพเนนต์ unmount.
 
 
 
