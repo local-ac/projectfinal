@@ -187,6 +187,13 @@ ________________________________________________________________________________
        res.status(500).json({ error: 'Error authenticating user' });
      }
     });
+
+    เส้นทาง API:
+
+   -   กำหนดไว้ที่ /api/login และเป็น HTTP POST methodใช้สำหรับรับข้อมูลล็อกอิน (username และ password) จากผู้ใช้ผ่าน req.body
+   -   การดึงข้อมูล:ดึงค่า username และ password จากคำขอ (request)
+   -   การตรวจสอบข้อมูล: ใช้ฟังก์ชัน authenticateUser เพื่อตรวจสอบข้อมูลผู้ใช้และรหัสผ่านฟังก์ชันนี้ส่งคืนผลลัพธ์ในรูปแบบของอ็อบเจ็กต์ที่มีสถานะ authenticated และข้อมูลผู้ใช้ (user)
+   -   การตอบกลับ (Response): ถ้าการตรวจสอบสำเร็จ (authResult.authenticated เป็น true) จะตอบกลับด้วย JSON ที่มี success: true และส่งข้อมูลผู้ใช้กลับไป ถ้าการตรวจสอบล้มเหลว (authResult.authenticated เป็น false) จะตอบกลับด้วยสถานะ HTTP 401 และข้อความว่า Invalid credentials ถ้าเกิดข้อผิดพลาดในกระบวนการ จะส่งกลับด้วยสถานะ HTTP 500 และข้อความว่า Error authenticating user
       
 
   
