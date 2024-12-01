@@ -57,7 +57,11 @@ Express
               app.use(express.static('public'));
         
 
-     Frontend (React)
+
+
+
+
+   Frontend (React)
      
    - React ทำหน้าที่เป็น frontend ของโปรเจกต์ ทำให้ผู้ใช้สามารถโต้ตอบกับระบบผ่านอินเตอร์เฟซผู้ใช้ เช่น หน้า Signup, Login, และหน้าแสดงข้อมูลต่าง ๆ เช่น รายชื่อผู้ใช้หรือตารางข้อมูลจากฐานข้อมูลReact จะส่ง request ผ่าน API ที่ตั้งอยู่ใน Bun เพื่อรับ-ส่งข้อมูลระหว่าง frontend และ backend
                
