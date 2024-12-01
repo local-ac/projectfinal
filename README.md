@@ -221,7 +221,7 @@ PokemonAPI
               })
               .catch(error => console.log('Error:', error));
 
-
+---
 
 ###  Local Postgresql via Docker Authentication and Authorization
 
