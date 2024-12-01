@@ -139,6 +139,8 @@ Express
        สามารถใช้ฟังก์ชัน clean-up เพื่อทำความสะอาด เช่น การยกเลิก event listener เมื่อคอมโพเนนต์ unmount.
 
 
+
+
  -   useState
 
      
@@ -146,21 +148,21 @@ Express
 
 
        
-                  import React, { useState } from 'react';
+         import React, { useState } from 'react';
 
-                  function Counter() {
-                 const [count, setCount] = useState(0); // กำหนด state ชื่อ count เริ่มต้นที่ 0
+         function Counter() {
+         const [count, setCount] = useState(0); // กำหนด state ชื่อ count เริ่มต้นที่ 0
 
-                 return (
-                <div>
-               <p>Count: {count}</p>
-               <button onClick={() => setCount(count + 1)}>เพิ่ม</button>
-               <button onClick={() => setCount(count - 1)}>ลด</button>
-             </div>
-              );
-               }
+         return (
+         <div>
+         <p>Count: {count}</p>
+         <button onClick={() => setCount(count + 1)}>เพิ่ม</button>
+         <button onClick={() => setCount(count - 1)}>ลด</button>
+         </div>
+         );
+         }
 
-            export default Counter;
+         export default Counter;
 
    -   useState เป็น Hook ที่ช่วยจัดการข้อมูลที่เปลี่ยนแปลงในฟังก์ชันคอมโพเนนต์ของ React ทำให้การพัฒนาแอปพลิเคชันง่ายขึ้นและมีประสิทธิภาพมากขึ้น โดย React จะดูแลการอัปเดต UI ให้โดยอัตโนมัติเมื่อ state เปลี่ยน.
 
