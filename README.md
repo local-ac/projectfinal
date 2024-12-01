@@ -139,6 +139,31 @@ Express
        สามารถใช้ฟังก์ชัน clean-up เพื่อทำความสะอาด เช่น การยกเลิก event listener เมื่อคอมโพเนนต์ unmount.
 
 
+ -   useState
+
+     
+        Hook ที่ใช้ใน React สำหรับจัดการ state (สถานะ) ใน ฟังก์ชันคอมโพเนนต์ โดยทำให้คอมโพเนนต์สามารถเก็บข้อมูลที่เปลี่ยนแปลงได้ และทำให้ React รีเรนเดอร์คอมโพเนนต์เมื่อ state เปลี่ยนแปลง
+
+
+       
+                  import React, { useState } from 'react';
+
+                  function Counter() {
+                 const [count, setCount] = useState(0); // กำหนด state ชื่อ count เริ่มต้นที่ 0
+
+                 return (
+                <div>
+               <p>Count: {count}</p>
+               <button onClick={() => setCount(count + 1)}>เพิ่ม</button>
+               <button onClick={() => setCount(count - 1)}>ลด</button>
+             </div>
+              );
+               }
+
+            export default Counter;
+
+   -   useState เป็น Hook ที่ช่วยจัดการข้อมูลที่เปลี่ยนแปลงในฟังก์ชันคอมโพเนนต์ของ React ทำให้การพัฒนาแอปพลิเคชันง่ายขึ้นและมีประสิทธิภาพมากขึ้น โดย React จะดูแลการอัปเดต UI ให้โดยอัตโนมัติเมื่อ state เปลี่ยน.
+
 
 ---
 
