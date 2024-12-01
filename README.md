@@ -9,6 +9,7 @@ ________________________________________________________________________________
 ### หลักการพัฒนา
 
 
+
    ReactDOM  DOM (Document Object Model)
 
    - ReactDOM คือ ชุดของ API ที่ใช้สำหรับการทำงานร่วมกับ DOM (Document Object Model) ในเว็บเบราว์เซอร์ โดยเฉพาะใน React ซึ่งเป็น JavaScript library สำหรับการสร้าง user interfaces (UI) การใช้ ReactDOM จะช่วยให้สามารถแสดงผลของ React components ไปยัง DOM ของเว็บเพจ
@@ -27,6 +28,7 @@ ________________________________________________________________________________
 
               const root = ReactDOM.createRoot(document.getElementById('root'));
               root.render(<App />);
+
 
 
 Express
@@ -61,10 +63,12 @@ Express
 
 
 
+
    Frontend (React)
      
    - React ทำหน้าที่เป็น frontend ของโปรเจกต์ ทำให้ผู้ใช้สามารถโต้ตอบกับระบบผ่านอินเตอร์เฟซผู้ใช้ เช่น หน้า Signup, Login, และหน้าแสดงข้อมูลต่าง ๆ เช่น รายชื่อผู้ใช้หรือตารางข้อมูลจากฐานข้อมูลReact จะส่ง request ผ่าน API ที่ตั้งอยู่ใน Bun เพื่อรับ-ส่งข้อมูลระหว่าง frontend และ backend
                
+
    
    Backend (Bun)
    
@@ -81,23 +85,26 @@ Express
             docker run --name postgres-container -e POSTGRES_USER=myuser -e POSTGRES_PASSWORD=mypassword -e POSTGRES_DB=mydb -p 5432:5432 -d postgres
 
 
-   --name postgres-container: กำหนดชื่อให้กับคอนเทนเนอร์
+
+        --name postgres-container: กำหนดชื่อให้กับคอนเทนเนอร์
        
-   -e POSTGRES_USER=myuser: ตั้งค่าผู้ใช้ฐานข้อมูล
+         -e POSTGRES_USER=myuser: ตั้งค่าผู้ใช้ฐานข้อมูล
       
-   -e POSTGRES_PASSWORD=mypassword: ตั้งค่ารหัสผ่านสำหรับผู้ใช้
+         -e POSTGRES_PASSWORD=mypassword: ตั้งค่ารหัสผ่านสำหรับผู้ใช้
    
-   -e POSTGRES_DB=mydb: สร้างฐานข้อมูลเริ่มต้น
+         -e POSTGRES_DB=mydb: สร้างฐานข้อมูลเริ่มต้น
       
-   -p 5432:5432: เปิดพอร์ต 5432 เพื่อให้เข้าถึงฐานข้อมูลจากภายนอก
+         -p 5432:5432: เปิดพอร์ต 5432 เพื่อให้เข้าถึงฐานข้อมูลจากภายนอก
       
-   -d: รันคอนเทนเนอร์ในโหมดเบื้องหลัง
+         -d: รันคอนเทนเนอร์ในโหมดเบื้องหลัง
 
    
 
    -   เชื่อมต่อไปยังฐานข้อมูล PostgreSQL ผ่านเครื่องมือเช่น psql หรือแอปพลิเคชันที่รองรับ PostgreSQL เช่น pgAdmin หรือ DBeaver.
 
       docker exec -it postgres-container psql -U myuser -d mydb
+
+
 
 
         
