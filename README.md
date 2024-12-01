@@ -203,6 +203,25 @@ ________________________________________________________________________________
 
       -  ใช้สำหรับผู้ดูแลระบบเข้าสู่ระบบ
 
+      app.post('/api/adminLogin', async (req, res) => {
+        const { username, password } = req.body;
+        try {
+          const authResult = await authenticateAdmin(username, password);
+          if (authResult.authenticated) {
+         res.json({ success: true, user: authResult.user });
+       } else {
+         res.status(401).json({ success: false, message: 'Invalid credentials' });
+       }
+        } catch (error) {
+       res.status(500).json({ error: 'Error authenticating admin' });
+        }
+      });
+
+   -   รับคำขอ POST ที่ /api/adminLogin, ระบบจะดึงข้อมูล username และ password จาก req.body. จากนั้นจะเรียกใช้ฟังก์ชัน authenticateAdmin เพื่อทำการตรวจสอบชื่อผู้ใช้และรหัสผ่าน.
+   -   ถ้าการตรวจสอบสำเร็จ (authResult.authenticated เป็น true), ระบบจะส่งผลลัพธ์กลับมาพร้อมข้อมูลผู้ใช้ (user).
+   -   ถ้าการตรวจสอบล้มเหลว, ระบบจะส่งสถานะ 401 (Unauthorized) พร้อมข้อความว่า "Invalid credentials".
+   -   ถ้ามีข้อผิดพลาดเกิดขึ้นระหว่างการตรวจสอบ (เช่นการเชื่อมต่อกับฐานข้อมูลล้มเหลว), ระบบจะส่งสถานะ 500 (Internal Server Error) พร้อมข้อความว่า "Error authenticating admin".
+
 ________________________________________________________________________________________________________________________________________
 
 ### Local Postgresql via Docker User Management
@@ -213,7 +232,22 @@ ________________________________________________________________________________
       -  post('/api/signup')
 
       -  ใช้สำหรับลงทะเบียนผู้ใช้ใหม่
-  
+      
+        app.post('/api/signup', async (req, res) => {
+         const { username, password, email, phone} = req.body;
+        try {
+          const newUser = await registerUser(username, password, email, phone);
+          res.status(201).json({ success: true, user: newUser });
+        } catch (error) {
+          res.status(500).json({ error: 'Error registering user' });
+        }
+         });
+
+
+   -   รับคำขอ POST ที่ /api/signup, ระบบจะดึงข้อมูล username, password, email, และ phone จาก req.body.
+   -   จากนั้นจะเรียกใช้ฟังก์ชัน registerUser เพื่อทำการลงทะเบียนผู้ใช้ใหม่ในระบบ.
+   -   ถ้าการลงทะเบียนสำเร็จ, ระบบจะส่งผลลัพธ์พร้อมสถานะ 201 (Created) และข้อมูลของผู้ใช้ (newUser).
+   -   ถ้ามีข้อผิดพลาดเกิดขึ้นระหว่างการลงทะเบียน (เช่นการเชื่อมต่อกับฐานข้อมูลล้มเหลว), ระบบจะส่งสถานะ 500 (Internal Server Error) พร้อมข้อความว่า "Error registering user".
 
   
   Get User 
@@ -222,7 +256,18 @@ ________________________________________________________________________________
 
       -  ใช้สำหรับดึงข้อมูลโปรไฟล์ของผู้ใช้ (สำหรับผู้ดูแลระบบเพื่อใช้ในการตรวจสอบ ,แก้ไข และลบ)
 
-  
+        app.get('/api/users', async (req, res) => {
+           try {
+          const users = await getUsers();
+          res.json(users);
+           } catch (error) {
+             res.status(500).send('Error fetching users');
+           }
+
+   -   รับคำขอ GET ที่ /api/users, ระบบจะเรียกใช้ฟังก์ชัน getUsers เพื่อดึงข้อมูลผู้ใช้จากฐานข้อมูลหรือแหล่งข้อมูลที่เกี่ยวข้อง.
+   -   ถ้าการดึงข้อมูลสำเร็จ, ระบบจะส่งผลลัพธ์ข้อมูลผู้ใช้ทั้งหมดในรูปแบบ JSON กลับไปยังผู้ขอ.
+   -   ถ้ามีข้อผิดพลาดเกิดขึ้นระหว่างการดึงข้อมูล (เช่นฐานข้อมูลไม่ตอบสนอง), ระบบจะส่งสถานะ 500 (Internal Server Error) พร้อมข้อความว่า "Error fetching users".
+
   
   Delete User  
 
@@ -230,6 +275,36 @@ ________________________________________________________________________________
 
       -  ใช้สำหรับลบผู้ใช้งาน (สำหรับผู้ดูแลระบบเท่านั้น)
 
+         app.put('/api/users/:id', async (req, res) => {
+           try {
+          const userId = parseInt(req.params.id, 10);
+          const { username, password, email, phone} = req.body;
+          await updateUser(userId, username, password, email, phone);
+          res.json({ success: true });
+           } catch (error) {
+          res.status(500).json({ error: 'Error updating user' });
+        }
+      });
+
+     
+
+   -   กำหนดไว้ที่ /api/users/:id และใช้ HTTP PUT method
+   -   รองรับการระบุ id ของผู้ใช้ใน URL (ผ่าน req.params.id) เพื่อเจาะจงผู้ใช้งานที่จะอัปเดต
+   -   การดึงข้อมูล:ดึง id ของผู้ใช้จาก URL และแปลงเป็นจำนวนเต็ม (parseInt) ดึงข้อมูลใหม่ เช่น username, password, email, และ phone จากคำขอ (req.body)
+   -   การอัปเดตข้อมูล:  เรียกฟังก์ชัน updateUser พร้อมส่ง userId และข้อมูลใหม่เพื่ออัปเดตผู้ใช้ในฐานข้อมูล
+   -   การตอบกลับ (Response):หากการอัปเดตสำเร็จ จะส่ง JSON ที่มี success: true กลับไป หากเกิดข้อผิดพลาด จะตอบกลับด้วยสถานะ HTTP 500 และข้อความว่า Error updating user
+
+   -   กรณีอัปเดตสำเร็จ
+
+      {
+           "success": true
+      }
+
+   -   กรณีเกิดข้อผิดพลาด
+
+     {
+           "error": "Error updating user"
+     }
 
   
   Update User Data
@@ -238,6 +313,30 @@ ________________________________________________________________________________
 
       -  ใช้สำหรับอัปเดทข้อมูลของผู้ใช้งาน
 
+      app.delete('/api/users/:id', async (req, res) => {
+         try {
+          const userId = parseInt(req.params.id, 10);
+          await deleteUser(userId);
+          res.json({ success: true });
+        } catch (error) {
+          res.status(500).json({ error: 'Error deleting user' });
+        }
+      });
+
+   -   รับคำขอ DELETE ที่ /api/users/:id, ระบบจะดึง id ของผู้ใช้จาก req.params.id และแปลงเป็นจำนวนเต็ม (ใช้ parseInt).
+   -   จากนั้นจะเรียกใช้ฟังก์ชัน deleteUser เพื่อลบผู้ใช้ที่มี id ดังกล่าว.
+   -   ถ้าการลบผู้ใช้สำเร็จ, ระบบจะส่งผลลัพธ์ JSON ที่มี success: true กลับไป.
+   -   ถ้ามีข้อผิดพลาดเกิดขึ้นระหว่างการลบ (เช่นฐานข้อมูลไม่ตอบสนอง), ระบบจะส่งสถานะ 500 (Internal Server Error) พร้อมข้อความว่า "Error deleting user".
+
+   -   กรณีลบผู้ใช้สำเร็จ
+
+            { "success": true }
+
+   -   กรณีเกิดข้อผิดพลาด
+
+           { "error": "Error deleting user" }
+     
+      
 
   
   Detail Pokemon
